@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -39,7 +40,7 @@ public class MailSenderController {
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET, path = "/findnfce")
-    public TRetConsSitNFe findNFCE() throws NfeException, CertificadoException {
+    public String findNFCE() throws NfeException, CertificadoException, IOException {
         return emailService.consultaNFce();
     }
 }
